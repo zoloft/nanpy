@@ -1,0 +1,33 @@
+Source: nanpy
+Maintainer: Antonio Egizio <antonio@egiz.io>
+Section: python
+Priority: optional
+Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: http://github.com/nanpy/nanpy
+
+Package: python3-nanpy
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Use your Arduino board with Python
+ Nanpy
+ =====
+ .
+ |Travis| |Latest Version| |Supported Python versions| |Downloads|
+ .
+ Use your Arduino board with Python. http://pypi.python.org/pypi/nanpy
+ .
+ Overview
+ --------
+ .
+ Nanpy is a library that use your Arduino as a slave, controlled by a master device where you run your scripts, such as a PC, a Raspberry Pi etc.
+ .
+ The main purpose of Nanpy is making programmers' life easier, providing them a powerful library to create prototypes faster and make Arduino programming a game for kids.
+ .
+ ::
+ .
+     from nanpy import ArduinoApi
+ .
+     a = ArduinoApi()
+     a.pinMode(13, a.OUTPUT)
+
