@@ -30,7 +30,7 @@ class SocketManager(object):
         if not self._socket:
             self.open()
         log.debug('sending:%s', repr(value))
-        self._socket.sendall(value)
+        self._socket.sendall(bytes(value, 'latin-1'))
 
     def readline(self):
         if not self._socket:
@@ -38,11 +38,12 @@ class SocketManager(object):
         s = ''
         while 1:
             c = self._socket.recv(1)
-            if c == '\r':
+            char = c.decode()
+            if char == '\r':
                 continue
-            if c == '\n':
+            if char == '\n':
                 break
-            if c == '':
+            if char == '':
                 break
             s += c
 
